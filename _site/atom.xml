@@ -4,13 +4,24 @@
  <title>T</title>
  <link href="http://tangyanlin.github.io/atom.xml" rel="self"/>
  <link href="http://tangyanlin.github.io"/>
- <updated>2015-10-15T21:44:56+08:00</updated>
+ <updated>2015-10-16T00:08:37+08:00</updated>
  <id>http://tangyanlin.github.io</id>
  <author>
    <name>Tang.me</name>
    <email>tangyanlin0210@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>New Start</title>
+   <link href="http://tangyanlin.github.io/%E7%A2%8E%E7%A2%8E%E5%BF%B5/2015/10/15/new-start"/>
+   <updated>2015-10-15T00:00:00+08:00</updated>
+   <id>http://tangyanlin.github.io/%E7%A2%8E%E7%A2%8E%E5%BF%B5/2015/10/15/new-start</id>
+   <content type="html">
+&lt;p&gt;混乱的互联网，混乱的我，两年半时间过去了，经历了很多碎片，碎片如果不拼凑在一起，早晚有一天会变成粉末。
+所以，算是一个新的开始吧，记录一下自己在工作生活中的积累和整理，选择这种博客的方式，是希望自己能坚持得久一点。&lt;/p&gt;
+</content>
+ </entry>
  
  
 </feed>
