@@ -4,13 +4,34 @@
  <title>T</title>
  <link href="http://tangyanlin.github.io/atom.xml" rel="self"/>
  <link href="http://tangyanlin.github.io"/>
- <updated>2015-10-16T00:49:18+08:00</updated>
+ <updated>2015-10-16T01:14:49+08:00</updated>
  <id>http://tangyanlin.github.io</id>
  <author>
    <name>Tang.me</name>
    <email>tangyanlin0210@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>关于这个blog的故事</title>
+   <link href="http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/16/blog"/>
+   <updated>2015-10-16T00:00:00+08:00</updated>
+   <id>http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/16/blog</id>
+   <content type="html">
+&lt;p&gt;那就先写写这个blog的搭建吧&lt;/p&gt;
+
+&lt;p&gt;github.io和Jekyll搭建个人博客似乎是一种最简单的方式了，那就开始吧。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;首先在git上创建一个tangyanlin.github.io的仓库&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;搭建的初期，我选择了Jekyll Bootstrap模板&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>New Start</title>
