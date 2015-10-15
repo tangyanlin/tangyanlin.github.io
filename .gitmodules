@@ -1,0 +1,9 @@
+[submodule "_theme_packages/tom"]
+	path = _theme_packages/tom
+	url = https://github.com/jekyllbootstrap/theme-tom.git
+[submodule "_theme_packages/the-minimum"]
+	path = _theme_packages/the-minimum
+	url = https://github.com/jekyllbootstrap/theme-the-minimum.git
+[submodule "_theme_packages/mark-reid"]
+	path = _theme_packages/mark-reid
+	url = https://github.com/jekyllbootstrap/theme-mark-reid.git
