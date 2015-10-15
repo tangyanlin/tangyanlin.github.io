@@ -5,10 +5,21 @@
         <description>T - Tang.me</description>
         <link>http://tangyanlin.github.io</link>
         <atom:link href="http://tangyanlin.github.io/rss.xml" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Thu, 15 Oct 2015 21:44:56 +0800</lastBuildDate>
-        <pubDate>Thu, 15 Oct 2015 21:44:56 +0800</pubDate>
+        <lastBuildDate>Fri, 16 Oct 2015 00:08:37 +0800</lastBuildDate>
+        <pubDate>Fri, 16 Oct 2015 00:08:37 +0800</pubDate>
         <ttl>60</ttl>
 
+
+        <item>
+                <title>New Start</title>
+                <description>
+&lt;p&gt;混乱的互联网，混乱的我，两年半时间过去了，经历了很多碎片，碎片如果不拼凑在一起，早晚有一天会变成粉末。
+所以，算是一个新的开始吧，记录一下自己在工作生活中的积累和整理，选择这种博客的方式，是希望自己能坚持得久一点。&lt;/p&gt;
+</description>
+                <link>http://tangyanlin.github.io/%E7%A2%8E%E7%A2%8E%E5%BF%B5/2015/10/15/new-start</link>
+                <guid>http://tangyanlin.github.io/%E7%A2%8E%E7%A2%8E%E5%BF%B5/2015/10/15/new-start</guid>
+                <pubDate>Thu, 15 Oct 2015 00:00:00 +0800</pubDate>
+        </item>
 
 
 </channel>
