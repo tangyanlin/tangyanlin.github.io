@@ -5,10 +5,31 @@
         <description>T - Tang.me</description>
         <link>http://tangyanlin.github.io</link>
         <atom:link href="http://tangyanlin.github.io/rss.xml" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Fri, 16 Oct 2015 00:57:19 +0800</lastBuildDate>
-        <pubDate>Fri, 16 Oct 2015 00:57:19 +0800</pubDate>
+        <lastBuildDate>Fri, 16 Oct 2015 01:14:49 +0800</lastBuildDate>
+        <pubDate>Fri, 16 Oct 2015 01:14:49 +0800</pubDate>
         <ttl>60</ttl>
 
+
+        <item>
+                <title>关于这个blog的故事</title>
+                <description>
+&lt;p&gt;那就先写写这个blog的搭建吧&lt;/p&gt;
+
+&lt;p&gt;github.io和Jekyll搭建个人博客似乎是一种最简单的方式了，那就开始吧。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;首先在git上创建一个tangyanlin.github.io的仓库&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;搭建的初期，我选择了Jekyll Bootstrap模板&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/16/blog</link>
+                <guid>http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/16/blog</guid>
+                <pubDate>Fri, 16 Oct 2015 00:00:00 +0800</pubDate>
+        </item>
 
         <item>
                 <title>New Start</title>
