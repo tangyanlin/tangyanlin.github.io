@@ -5,15 +5,14 @@
         <description>T - Tang.me</description>
         <link>http://tangyanlin.github.io</link>
         <atom:link href="http://tangyanlin.github.io/rss.xml" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Fri, 16 Oct 2015 22:58:57 +0800</lastBuildDate>
-        <pubDate>Fri, 16 Oct 2015 22:58:57 +0800</pubDate>
+        <lastBuildDate>Sat, 17 Oct 2015 01:06:41 +0800</lastBuildDate>
+        <pubDate>Sat, 17 Oct 2015 01:06:41 +0800</pubDate>
         <ttl>60</ttl>
 
 
         <item>
                 <title>关于这个blog的故事</title>
-                <description>
-&lt;p&gt;那就先写写这个blog的搭建吧&lt;/p&gt;
+                <description>&lt;p&gt;那就先写写这个blog的搭建吧&lt;/p&gt;
 
 &lt;p&gt;github.io和Jekyll搭建个人博客似乎是一种最简单的方式了，那就开始吧。&lt;/p&gt;
 
@@ -26,12 +25,12 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre class=&quot;terminal&quot;&gt;&lt;code&gt;
+&lt;pre class=&quot;terminal&quot;&gt;
 git clone https://github.com/plusjade/jekyll-bootstrap.git tangyanlin.github.io
 cd tangyanlin.github.com
 git remote set-url origin git@github.com:USERNAME/tangyanlin.github.com.git
 git push origin master
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;
 
 &lt;p&gt;这时候访问&lt;a href=&quot;tangyanlin.github.io&quot;&gt;tangyanlin.github.io&lt;/a&gt;就可以看到默认的页面了&lt;/p&gt;
 
@@ -39,42 +38,42 @@ git push origin master
   &lt;li&gt;需要在本地安装jekyll环境，可以在本地build和server&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre class=&quot;terminal&quot;&gt;&lt;code&gt;
+&lt;pre class=&quot;terminal&quot;&gt;
 sudo gem update --system   #升级gem
 gem sources --add http://gems.github.com  #添加源
 gem sources --add https://ruby.taobao.org
 sudo gem install jekyll
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;
 
 &lt;ul&gt;
   &lt;li&gt;变换theme, &lt;a href=&quot;http://themes.jekyllbootstrap.com/preview/twitter/&quot;&gt;theme&lt;/a&gt;这里有几个简单的theme可以选择，个人偏好tom theme啦&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre class=&quot;terminal&quot;&gt;&lt;code&gt;
+&lt;pre class=&quot;terminal&quot;&gt;
 rake theme:install git=&quot;https://github.com/jekyllbootstrap/theme-tom.git&quot;
 rake theme:switch name=&quot;tom&quot;
 jekyll build
 git push origin master
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;
 
 &lt;p&gt;以为这样就万事大吉了，因为本地jekyll s看起来没什么问题，但是push到git上访问&lt;a href=&quot;tangyanlin.github.io&quot;&gt;tangyanlin.github.io&lt;/a&gt;结果并没有变吧&lt;/p&gt;
 
 &lt;p&gt;原因请查看邮件&lt;/p&gt;
 
-&lt;pre class=&quot;terminal&quot;&gt;&lt;code&gt;
+&lt;pre class=&quot;terminal&quot;&gt;
 The page build failed with the following error:
 The submodule `_theme_packages/mark-reid` was not properly initialized with a `.gitmodules` file.
 For more information, see   https://help.github.com/articles/page-build-failed-missing-submodule.
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;
 
 &lt;p&gt;解决方案如下，特别奇怪rake theme:install竟然没有自己添加submodule&lt;/p&gt;
 
-&lt;pre class=&quot;terminal&quot;&gt;&lt;code&gt;
+&lt;pre class=&quot;terminal&quot;&gt;
 rm -rf _theme_package/tom
 git rm --cached _theme_packages/tom
 git submodule add https://github.com/jekyllbootstrap/theme-tom.git _theme_packages/tom
 git submodule update --init
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;
 
 &lt;p&gt;再试试吧，这下页面焕然一新了吧&lt;/p&gt;
 
@@ -82,9 +81,9 @@ git submodule update --init
   &lt;li&gt;添加post&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre class=&quot;terminal&quot;&gt;&lt;code&gt;
+&lt;pre class=&quot;terminal&quot;&gt;
 rake post title=&quot;New Start&quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;
 
 &lt;p&gt;会在_posts下生成2015-10-15-new-start.md的文件，编辑之后提交，就可以了。&lt;/p&gt;
 

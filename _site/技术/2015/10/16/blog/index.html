@@ -36,8 +36,7 @@
     16 October 2015 
     
   </p>
-  
-<p>那就先写写这个blog的搭建吧</p>
+  <p>那就先写写这个blog的搭建吧</p>
 
 <p>github.io和Jekyll搭建个人博客似乎是一种最简单的方式了，那就开始吧。</p>
 
@@ -50,12 +49,12 @@
   </li>
 </ul>
 
-<pre class="terminal"><code>
+<pre class="terminal">
 git clone https://github.com/plusjade/jekyll-bootstrap.git tangyanlin.github.io
 cd tangyanlin.github.com
 git remote set-url origin git@github.com:USERNAME/tangyanlin.github.com.git
 git push origin master
-</code></pre>
+</pre>
 
 <p>这时候访问<a href="tangyanlin.github.io">tangyanlin.github.io</a>就可以看到默认的页面了</p>
 
@@ -63,42 +62,42 @@ git push origin master
   <li>需要在本地安装jekyll环境，可以在本地build和server</li>
 </ul>
 
-<pre class="terminal"><code>
+<pre class="terminal">
 sudo gem update --system   #升级gem
 gem sources --add http://gems.github.com  #添加源
 gem sources --add https://ruby.taobao.org
 sudo gem install jekyll
-</code></pre>
+</pre>
 
 <ul>
   <li>变换theme, <a href="http://themes.jekyllbootstrap.com/preview/twitter/">theme</a>这里有几个简单的theme可以选择，个人偏好tom theme啦</li>
 </ul>
 
-<pre class="terminal"><code>
+<pre class="terminal">
 rake theme:install git="https://github.com/jekyllbootstrap/theme-tom.git"
 rake theme:switch name="tom"
 jekyll build
 git push origin master
-</code></pre>
+</pre>
 
 <p>以为这样就万事大吉了，因为本地jekyll s看起来没什么问题，但是push到git上访问<a href="tangyanlin.github.io">tangyanlin.github.io</a>结果并没有变吧</p>
 
 <p>原因请查看邮件</p>
 
-<pre class="terminal"><code>
+<pre class="terminal">
 The page build failed with the following error:
 The submodule `_theme_packages/mark-reid` was not properly initialized with a `.gitmodules` file.
 For more information, see   https://help.github.com/articles/page-build-failed-missing-submodule.
-</code></pre>
+</pre>
 
 <p>解决方案如下，特别奇怪rake theme:install竟然没有自己添加submodule</p>
 
-<pre class="terminal"><code>
+<pre class="terminal">
 rm -rf _theme_package/tom
 git rm --cached _theme_packages/tom
 git submodule add https://github.com/jekyllbootstrap/theme-tom.git _theme_packages/tom
 git submodule update --init
-</code></pre>
+</pre>
 
 <p>再试试吧，这下页面焕然一新了吧</p>
 
@@ -106,9 +105,9 @@ git submodule update --init
   <li>添加post</li>
 </ul>
 
-<pre class="terminal"><code>
+<pre class="terminal">
 rake post title="New Start"
-</code></pre>
+</pre>
 
 <p>会在_posts下生成2015-10-15-new-start.md的文件，编辑之后提交，就可以了。</p>
 
