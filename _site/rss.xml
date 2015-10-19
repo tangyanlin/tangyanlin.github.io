@@ -5,15 +5,19 @@
         <description>T - Tang.me</description>
         <link>http://tangyanlin.github.io</link>
         <atom:link href="http://tangyanlin.github.io/rss.xml" rel="self" type="application/rss+xml" />
+<<<<<<< HEAD
         <lastBuildDate>Fri, 16 Oct 2015 23:40:58 +0800</lastBuildDate>
         <pubDate>Fri, 16 Oct 2015 23:40:58 +0800</pubDate>
+=======
+        <lastBuildDate>Sat, 17 Oct 2015 01:06:41 +0800</lastBuildDate>
+        <pubDate>Sat, 17 Oct 2015 01:06:41 +0800</pubDate>
+>>>>>>> master
         <ttl>60</ttl>
 
 
         <item>
                 <title>关于这个blog的故事</title>
-                <description>
-&lt;p&gt;那就先写写这个blog的搭建吧&lt;/p&gt;
+                <description>&lt;p&gt;那就先写写这个blog的搭建吧&lt;/p&gt;
 
 &lt;p&gt;github.io和Jekyll搭建个人博客似乎是一种最简单的方式了，那就开始吧。&lt;/p&gt;
 

@@ -4,7 +4,7 @@
  <title>T</title>
  <link href="http://tangyanlin.github.io/atom.xml" rel="self"/>
  <link href="http://tangyanlin.github.io"/>
- <updated>2015-10-16T23:40:58+08:00</updated>
+ <updated>2015-10-17T01:06:41+08:00</updated>
  <id>http://tangyanlin.github.io</id>
  <author>
    <name>Tang.me</name>
@@ -17,8 +17,7 @@
    <link href="http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/16/blog"/>
    <updated>2015-10-16T00:00:00+08:00</updated>
    <id>http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/16/blog</id>
-   <content type="html">
-&lt;p&gt;那就先写写这个blog的搭建吧&lt;/p&gt;
+   <content type="html">&lt;p&gt;那就先写写这个blog的搭建吧&lt;/p&gt;
 
 &lt;p&gt;github.io和Jekyll搭建个人博客似乎是一种最简单的方式了，那就开始吧。&lt;/p&gt;
 
