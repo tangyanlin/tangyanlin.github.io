@@ -5,15 +5,93 @@
         <description>T - Tang.me</description>
         <link>http://tangyanlin.github.io</link>
         <atom:link href="http://tangyanlin.github.io/rss.xml" rel="self" type="application/rss+xml" />
-<<<<<<< HEAD
-        <lastBuildDate>Fri, 16 Oct 2015 23:40:58 +0800</lastBuildDate>
-        <pubDate>Fri, 16 Oct 2015 23:40:58 +0800</pubDate>
-=======
-        <lastBuildDate>Sat, 17 Oct 2015 01:06:41 +0800</lastBuildDate>
-        <pubDate>Sat, 17 Oct 2015 01:06:41 +0800</pubDate>
->>>>>>> master
+        <lastBuildDate>Wed, 21 Oct 2015 00:20:49 +0800</lastBuildDate>
+        <pubDate>Wed, 21 Oct 2015 00:20:49 +0800</pubDate>
         <ttl>60</ttl>
 
+
+        <item>
+                <title>F1 中文译文</title>
+                <description>
+&lt;p&gt;以前读过F1的相关论文，但是很多地方都没有读懂，想再次读的时候发现好像又是重新开始一遍的样子，当年是牺牲了十一的时间看完了所有相关的论文，想来还是记下一些会比较好。文章会主要以翻译&lt;a href=&quot;http://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/41344.pdf&quot;&gt;F1&lt;/a&gt;为主，也会加上其它相关文章的注解。估计会翻译很久很久吧，哈哈，也会关注&lt;a href=&quot;https://github.com/pingcap/tidb&quot;&gt;tidb&lt;/a&gt;F1的Go语言实现开发。&lt;/p&gt;
+
+&lt;h2 id=&quot;f1-sql&quot;&gt;F1: 扩展的分布式SQL数据库&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;摘要&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;F1是google用来支持AdWords业务而建立的一个分布式关系型数据库系统。F1一种混合型的数据库，将像bigtable那种NoSQL系统的可用性、可扩展性和传统的SQL数据库的一致性、易用性相结合。F1建立在Spanner之上，Spanner提供了跨数据中心的同步副本和强一致性。同步副本会导致更高的提交延时，我们可以通过结构化数据类型的分层Schema模型和灵活的应用层设计来减少延时。F1还包括了一个完整的分布式SQL查询引擎和自动化检测和发布。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;介绍&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;F1是Google为了AdWords系统而建立的一种新的存储系统，它是一种容错的，完全分布式的OLTP和OLAP数据库。F1用来替代那些不能够满足可扩展性和可靠性需求的分片MySQL实现。
+F1设计的主要目标是：
+  * 可扩展性：系统必须可以通过增加资源简单透明地做可扩展。基于MySQL的分片数据库不容易扩展，甚至比较难重新重新负载均衡。我们的用户需要复杂的查询和join，导致对数据的分片不能过细，数据的重新分片也变得很有挑战性。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;可用性：系统不应该因为任何原因而宕机，数据中心中断、定期维护、schema变化等。Google核心业务系统存储的数据，任何的宕机都会造成可观的收入影响。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;一致性：系统必须提供ACID事务机制，而且应用必须总是呈现一致和正确的数据。在设计应用中来处理并发带来的异常是易错的、耗时的，而且没有足够回报的。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;易用性：系统必须提供完善的SQL查询支持和其它SQL数据库提供的功能。像索引和adhoc查询并不是必须得，但对于我们的业务是必须的。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;基本架构&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../image/f1-framework.png&quot; alt=&quot;framework&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Spanner&lt;/li&gt;
+  &lt;li&gt;数据模型
+    &lt;ul&gt;
+      &lt;li&gt;分级Schema&lt;/li&gt;
+      &lt;li&gt;Protocol Buffer&lt;/li&gt;
+      &lt;li&gt;索引&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sechema变化
+    &lt;ul&gt;
+      &lt;li&gt;灵活的锁粒度&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;事务&lt;/li&gt;
+  &lt;li&gt;改变历史&lt;/li&gt;
+  &lt;li&gt;客户端设计
+    &lt;ul&gt;
+      &lt;li&gt;简化的ORM&lt;/li&gt;
+      &lt;li&gt;NoSQL接口&lt;/li&gt;
+      &lt;li&gt;SQL接口&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;查询处理过程
+    &lt;ul&gt;
+      &lt;li&gt;集中和分布式查询&lt;/li&gt;
+      &lt;li&gt;分布式查询样例&lt;/li&gt;
+      &lt;li&gt;远程数据&lt;/li&gt;
+      &lt;li&gt;分布式执行概要&lt;/li&gt;
+      &lt;li&gt;分级表join&lt;/li&gt;
+      &lt;li&gt;分区的消费者&lt;/li&gt;
+      &lt;li&gt;Protocol Buffer查询&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;部署&lt;/li&gt;
+  &lt;li&gt;延时和吞吐量&lt;/li&gt;
+  &lt;li&gt;相关工作&lt;/li&gt;
+  &lt;li&gt;总结&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/19/f1-</link>
+                <guid>http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/19/f1-</guid>
+                <pubDate>Mon, 19 Oct 2015 00:00:00 +0800</pubDate>
+        </item>
 
         <item>
                 <title>关于这个blog的故事</title>
@@ -102,8 +180,7 @@ rake post title=&quot;New Start&quot;
 
         <item>
                 <title>New Start</title>
-                <description>
-&lt;p&gt;混乱的互联网，混乱的我，两年半时间过去了，经历了很多碎片，碎片如果不拼凑在一起，早晚有一天会变成粉末。
+                <description>&lt;p&gt;混乱的互联网，混乱的我，两年半时间过去了，经历了很多碎片，碎片如果不拼凑在一起，早晚有一天会变成粉末。
 所以，算是一个新的开始吧，记录一下自己在工作生活中的积累和整理，选择这种博客的方式，是希望自己能坚持得久一点。&lt;/p&gt;
 </description>
                 <link>http://tangyanlin.github.io/%E7%A2%8E%E7%A2%8E%E5%BF%B5/2015/10/15/new-start</link>

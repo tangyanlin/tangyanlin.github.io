@@ -8,5 +8,6 @@ http://tangyanlin.github.io/rss.xml
 http://tangyanlin.github.io/sitemap.txt
 http://tangyanlin.github.io/tags.html
 
+http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/19/f1-
 http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/16/blog
 http://tangyanlin.github.io/%E7%A2%8E%E7%A2%8E%E5%BF%B5/2015/10/15/new-start
