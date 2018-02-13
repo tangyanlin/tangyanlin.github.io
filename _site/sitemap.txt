@@ -1,13 +1,15 @@
 
-http://tangyanlin.github.io/archive.html
+http://tangyanlin.github.io/archive
 http://tangyanlin.github.io/atom.xml
-http://tangyanlin.github.io/categories.html
-http://tangyanlin.github.io/index.html
-http://tangyanlin.github.io/pages.html
+http://tangyanlin.github.io/categories
+http://tangyanlin.github.io/
+http://tangyanlin.github.io/pages
 http://tangyanlin.github.io/rss.xml
 http://tangyanlin.github.io/sitemap.txt
-http://tangyanlin.github.io/tags.html
+http://tangyanlin.github.io/tags
 
-http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/19/f1-
+http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/11/22/
+http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/22/docker
+http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/19/f1
 http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/16/blog
 http://tangyanlin.github.io/%E7%A2%8E%E7%A2%8E%E5%BF%B5/2015/10/15/new-start

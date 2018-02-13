@@ -4,7 +4,7 @@
  <title>T</title>
  <link href="http://tangyanlin.github.io/atom.xml" rel="self"/>
  <link href="http://tangyanlin.github.io"/>
- <updated>2015-10-21T00:20:49+08:00</updated>
+ <updated>2018-02-13T17:49:24+08:00</updated>
  <id>http://tangyanlin.github.io</id>
  <author>
    <name>Tang.me</name>
@@ -13,14 +13,43 @@
 
  
  <entry>
+   <title>关于作业调度系统</title>
+   <link href="http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/11/22/"/>
+   <updated>2015-11-22T00:00:00+08:00</updated>
+   <id>http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/11/</id>
+   <content type="html">
+&lt;p&gt;最近几年使用过几个作业调度系统，自己也曾经写过一个调度系统，最近公司在推一个分布式的调度系统chronos，以前顾忌到azkaban的结构体系太复杂一直没时间细细研究源码，而且azkaban在很多方面也没有解决我当时遇到的一些问题，借此机会总结一下在调度系统上的经验。&lt;/p&gt;
+
+&lt;p&gt;to be continued……&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>docker学习</title>
+   <link href="http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/22/docker"/>
+   <updated>2015-10-22T00:00:00+08:00</updated>
+   <id>http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/22/docker</id>
+   <content type="html">
+&lt;p&gt;几个月前看过一本书《第一本docker书》，最近也会连续听几个docker的培训，整理一下，分享给大家。&lt;/p&gt;
+
+&lt;p&gt;今天听了第一个分享，因为是在北京听的上海的分享，所以并没有很投入，因为有一个屏幕看不清，%&amp;gt;_&amp;lt;%，但是听明白两个问题：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;容器与虚拟机的区别？&lt;/li&gt;
+  &lt;li&gt;docker能用来做什么？&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>F1 中文译文</title>
-   <link href="http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/19/f1-"/>
+   <link href="http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/19/f1"/>
    <updated>2015-10-19T00:00:00+08:00</updated>
    <id>http://tangyanlin.github.io/%E6%8A%80%E6%9C%AF/2015/10/19/f1-</id>
    <content type="html">
 &lt;p&gt;以前读过F1的相关论文，但是很多地方都没有读懂，想再次读的时候发现好像又是重新开始一遍的样子，当年是牺牲了十一的时间看完了所有相关的论文，想来还是记下一些会比较好。文章会主要以翻译&lt;a href=&quot;http://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/41344.pdf&quot;&gt;F1&lt;/a&gt;为主，也会加上其它相关文章的注解。估计会翻译很久很久吧，哈哈，也会关注&lt;a href=&quot;https://github.com/pingcap/tidb&quot;&gt;tidb&lt;/a&gt;F1的Go语言实现开发。&lt;/p&gt;
 
-&lt;h2 id=&quot;f1-sql&quot;&gt;F1: 扩展的分布式SQL数据库&lt;/h2&gt;
+&lt;h2 id=&quot;f1-扩展的分布式sql数据库&quot;&gt;F1: 扩展的分布式SQL数据库&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;摘要&lt;/li&gt;
@@ -33,10 +62,11 @@
 &lt;/ul&gt;
 
 &lt;p&gt;F1是Google为了AdWords系统而建立的一种新的存储系统，它是一种容错的，完全分布式的OLTP和OLAP数据库。F1用来替代那些不能够满足可扩展性和可靠性需求的分片MySQL实现。
-F1设计的主要目标是：
-  * 可扩展性：系统必须可以通过增加资源简单透明地做可扩展。基于MySQL的分片数据库不容易扩展，甚至比较难重新重新负载均衡。我们的用户需要复杂的查询和join，导致对数据的分片不能过细，数据的重新分片也变得很有挑战性。&lt;/p&gt;
-
+F1设计的主要目标是：&lt;/p&gt;
 &lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;可扩展性：系统必须可以通过增加资源简单透明地做可扩展。基于MySQL的分片数据库不容易扩展，甚至比较难重新重新负载均衡。我们的用户需要复杂的查询和join，导致对数据的分片不能过细，数据的重新分片也变得很有挑战性。&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;可用性：系统不应该因为任何原因而宕机，数据中心中断、定期维护、schema变化等。Google核心业务系统存储的数据，任何的宕机都会造成可观的收入影响。&lt;/p&gt;
   &lt;/li&gt;
@@ -44,24 +74,80 @@ F1设计的主要目标是：
     &lt;p&gt;一致性：系统必须提供ACID事务机制，而且应用必须总是呈现一致和正确的数据。在设计应用中来处理并发带来的异常是易错的、耗时的，而且没有足够回报的。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;易用性：系统必须提供完善的SQL查询支持和其它SQL数据库提供的功能。像索引和adhoc查询并不是必须得，但对于我们的业务是必须的。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;基本架构&lt;/p&gt;
+    &lt;p&gt;易用性：系统必须提供完善的SQL查询支持和其它SQL数据库提供的功能。像索引和adhoc查询并不是必须的，但对于我们的业务是必须的。&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;../image/f1-framework.png&quot; alt=&quot;framework&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;最近的一些刊物都指出以上目标是互斥的。这篇文章一个重要的贡献就是展示了F1的设计是如何满足所有的这些目标，我们在哪些地方做了trade-off和牺牲。F1这个名字来自于遗传学，Filia 1 hybrid是由不同亲本杂交的第一代后代。F1数据库确实是一个混合物，结合了传统关系型数据库和Bigtable这种可扩展NoSQL系统的优点。
+F1是建立在Spanner基础之上，Spanner提供了很好地可扩展数据存储、同步副本、强一致性和强排序性。F1继承了这些特点，并且增加了一些特点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;分布式SQL查询，包括从外部数据源join数据&lt;/li&gt;
+  &lt;li&gt;事务一致性二层索引&lt;/li&gt;
+  &lt;li&gt;异步schema变化，包括数据库重组&lt;/li&gt;
+  &lt;li&gt;优化的事务&lt;/li&gt;
+  &lt;li&gt;自动变化历史记录和发布&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我们的设计使F1对于一般的读写有更高的延时。我们开发了技术来隐藏增加的延时，我们发现面向用户的事务和MySQL系统有一样的性能：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;F1 schema使得数据聚类更明确，使用分级的关系和结构化数据类型的列来使用表格。这种聚类提高了数据的本地性，减少了RPC需要从远程读取数据的次数和消耗&lt;/li&gt;
+  &lt;li&gt;F1用户大量使用批量、并行和异步读。我们使用了一个新的ORM库来使这些概念更加清晰。这使得对于一般应用层操作需要的RPC次数有了上限，使得这些操作更容易被扩展&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;F1系统早在2012年就被用于管理所有AdWords广告竞选数据。AdWords是一个庞大而多样的生态系统，包括了百级的应用和千级的用户，所有都共享这些数据库。数据库超过了100TB，QPS每秒100000，每天运行的SQL查询扫描10000000000000行数据。在系统意外中断的性狂下可用性仍高达5个9，在我们web应用中可观测到的延时和MySQL系统相比并没有增加。
+文中所说的Adwords数据库是使用F1的第一个用户，Google的其它几个团队现在也在计划开始部署F1。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;基本架构&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;用户通过F1客户端库与F1交互。其它的工具如命令行adhoc SQL shell使用同样的客户端实现。客户端发送请求到其中那个一台F1服务器，F1服务器负责从远程数据源读写数据和协调查询执行。图一描绘了基本架构和组件间的通讯。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../image/f1-framework.png&quot; alt=&quot;framework&quot; /&gt;
+图1：两个数据中心的F1系统基础架构&lt;/p&gt;
+
+&lt;p&gt;因为F1的分布式架构，会特别关心怎么避免不必要的请求延时。比如，F1客户端和负载均衡会尽可能去连接一个最近数据中心的F1服务器。当然在高失败率的时候，请求也可能会去连接更远数据中心的F1服务器。&lt;/p&gt;
+
+&lt;p&gt;F1服务器通常和存储数据的Spanner服务器在同一个数据中心。这样保证F1服务器可以快速读取到数据。F1服务器在需要时可以和其它数据中心的Spanner服务器通讯，可以保证可用性和负载均衡。每个数据中心的Spanner服务器按序接收来自同一个集群的CFS数据。与Spanner不同，CFS不是一个全局副本的服务器，所以Spanner服务器不能与远程的CFS实例通讯。&lt;/p&gt;
+
+&lt;p&gt;F1服务器近乎是无状态的，允许一个客户端可以和不同的F1服务器通讯。唯一例外的是当一个客户端使用了悲观事务，必须要一直占有锁。在事务期间，这个客户端就绑定到了这个F1服务器上。F1事务将会在Section5进一步描述。F1服务器可以从系统中快速添加或者删除，因为F1服务器本身没有任何数据，所以一个节点的加入或者删除不需要任何数据的移动。&lt;/p&gt;
+
+&lt;p&gt;一个F1集群有几个组件组成，可以分布式地执行SQL查询。当查询计划估计并行可以减小查询处理的延时的时候，分布式执行会替代集中式执行。The shared slave pool consists of F1 processes that exist only to execute parts of dis- tributed query plans on behalf of regular F1 servers.Slave pool成员是由F1 master维护的，F1 master监控slave的健康和分配可用的slaves给F1服务器。F1还支持通过Google的Mapreduce框架处理大规模数据。因为性能的原因，Mapreduce worker允许Spanner服务器和bulk的其它数据直接通信。其它客户端通过F1服务器只能互斥地进行读或者写操作。&lt;/p&gt;
+
+&lt;p&gt;整个系统的吞吐量可以通过增加更多的Spanner服务器，F1服务器或者F1 slaves。因为F1服务器不存储数据，增加新的服务器并不会涉及到任何数据重新分布的消耗。增加新的Spanner服务器会导致数据重新分布。这个过程对F1来说是完全透明地，对于F1的客户端也是一样。&lt;/p&gt;
+
+&lt;p&gt;基于Spanner的远程存储模型和地理上分散的部署导致和其它常规数据库非常不同的延时特性。因为多个数据中心的数据是同步副本，我们又选择了广泛分布的数据中心，提交的延时相对较高(50-150ms)。高延时必须改变当客户端和数据库交互时的使用模式。这些变化将在7.1部分阐述，我们将会在Section 9和10提供更详细的部署选择和最终的可用性和延时。&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Spanner&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;F1建立在Spanner的基础之上。这两个系统同时开发，相互协作。Spanner负责底层存储问题，比如持久性，缓存，副本，容错性，数据分片和迁移，位置查看和事务。&lt;/p&gt;
+
+&lt;p&gt;在Spanner中，数据行通过使用schema的祖先关系被划分到集群中，叫作目录(directory)。每个目录至少有一个碎片，大的目录可以有多个碎片。分组(group)存储了目录分片的集合。每个数据中心每个分组通常有一个副本tablet。数据同步副本采用Paxos算法，一个分组的所有tablet存着同样地数据。一个副本tablet被选举为分组的Paxos组长，组长是分组中所有事务活动的入口点。分组可能也包括只读的副本，在Paxos算法中这样的副本不能投票也不能成为分组组长。&lt;/p&gt;
+
+&lt;p&gt;Spanner使用严格两阶段锁提供了序列化悲观事务。一个事务包括了多次读，服务共享或者互斥锁，跟着一个写操作升级锁和自动提交事务。所有提交使用Paxos进行副本同步。在单个分组中在更新本地数据的过程中事务是有效的。Spanner还提供了跨多个分组的事务，叫做事务参与者，在Paxos上使用两阶段提交(2PC)协议来完成。2PC增加了额外的网络开销，会使提交延时加倍。2PC在10个参与时可以很好地工作，但是当参与者达到100个时，放弃的频率和延时会大大增加。&lt;/p&gt;
+
+&lt;p&gt;Spanner有很强的一致性和时间戳语义。每个事务被附上一个提交时间戳，这些时间戳提供了一个全局的提交顺序。Spanner在Google数据中心使用硬件时钟以一种可扩展的方式生成全局有序的时间戳。Spanner使用时间戳来提供多个版本一致性读，包括不带读锁的当前数据快照读。为了保证非阻塞，全局一致性读，Spanner提供了一个全局安全的时间戳，依靠它可以保证正在执行中的事务不能被提交。全局时间戳通常滞后当前时间5-10秒。在这个时间戳的读可以运行在任何一个副本tablet，包括只读副本，在运行事务时它们将不会被堵塞。&lt;/p&gt;
+
+&lt;ul&gt;
   &lt;li&gt;数据模型
     &lt;ul&gt;
       &lt;li&gt;分级Schema&lt;/li&gt;
-      &lt;li&gt;Protocol Buffer&lt;/li&gt;
-      &lt;li&gt;索引&lt;/li&gt;
     &lt;/ul&gt;
+
+    &lt;p&gt;F1数据模型和Spanner数据模型非常相似。实际上，Spanner的原始数据模型更像Bigtable，但是后来Spanner就采用了F1的数据模型。在逻辑层面，F1有一个类似于传统的RDBMS的关系型schema，带了一些扩展，包括明确地表层次和Protocol Buffer数据类型的列。
+ 逻辑上，F1 schema的表可以被组织成层级关系。物理上，F1的子表和父表交错在一起。逻辑上的表不能混乱的交错在一起，子表必须要有一个对应父表的外键，外键作为主键的前缀。例如，AdWords schema包含了以CustomerId为主键的用户表，有一个主键为(CustomerId, CampaignId)的活动子表，而活动表也有一个以(CustomerId, CampaignId, AdGroupId)为主键的广告组子表。在层次主表中的一行被称为主行(root row). 对应主行的所有子表行和主行聚合在一个Spanner目录中，这意味着集群通常是存储在一个Spanner服务器中的。子行(child row)以主键为key被存储在父行之下。如图2展示的例子。&lt;/p&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../image/schema_example.png&quot; alt=&quot;schema_example&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Protocol Buffer&lt;/li&gt;
+  &lt;li&gt;索引&lt;/li&gt;
   &lt;li&gt;Sechema变化
     &lt;ul&gt;
       &lt;li&gt;灵活的锁粒度&lt;/li&gt;
